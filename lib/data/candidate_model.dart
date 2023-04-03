@@ -1,13 +1,13 @@
 class Candidate {
   Candidate({
     required this.id,
-    required this.fio,
-    required this.age_category,
-    required this.job,
-    required this.email,
-    required this.section,
-    required this.phone_number,
-    required this.leadership,
+    required this.fio, // ФИО
+    required this.age_category, // Возрастная категория
+    required this.job, // Место работы (только для профессиональных авторов)
+    required this.email, // Почта
+    required this.section, // Секция конкурса
+    required this.phone_number, // Номер телефона
+    required this.leadership, // Руководитель (только для младших участников)
   });
 
   final int id;
