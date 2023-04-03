@@ -23,6 +23,7 @@ class AppPallete {
   static const labelYellow = Color(0xffA37F00);
   static const labelBlue = Color(0xff2A5DE0);
   static const labelViolet = Color(0xff833CED);
+  static const blue = Color(0xff1B9DFF);
   static const labelGreen = Color(0xff02730E);
   static const labelBrown = Color(0xff934F00);
   static const labelRed = Color(0xffE02A2A);

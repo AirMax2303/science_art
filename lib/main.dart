@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:science_art/pages/statute_page.dart';
 import 'package:video_player/video_player.dart';
 import 'app/theme/app_pallete.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 void main() {
   runApp(const MyApp());
@@ -54,8 +56,8 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     const headTextStyle = TextStyle(fontSize: 35);
-    const countingDown = TextStyle(fontSize: 70, color: AppPallete.labelViolet);
-    const timeTextStyle = TextStyle(fontSize: 20, color: AppPallete.black4);
+    const countingDown = TextStyle(fontSize: 70, color: AppPallete.blue);
+    const timeTextStyle = TextStyle(fontSize: 35, color: AppPallete.black4);
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.only(
@@ -70,57 +72,73 @@ class _MyHomePageState extends State<MyHomePage> {
                 const SizedBox(height: 10),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
-                    Text(
-                      'КОНКУРС',
-                      style: headTextStyle,
+                  children: [
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => const MyHomePage()),
+                        );
+                      },
+                      child: const Text(
+                        'КОНКУРС',
+                        style: headTextStyle,
+                      ),
                     ),
-                    SizedBox(width: 10),
-                    Text(
-                      '/',
-                      style: headTextStyle,
-                    ),
-                    SizedBox(width: 10),
-                    Text(
-                      'ПОЛОЖЕНИЕ',
-                      style: headTextStyle,
-                    ),
-                    SizedBox(width: 10),
+                    const SizedBox(width: 10),
                     Text(
                       '/',
                       style: headTextStyle,
                     ),
-                    SizedBox(width: 10),
+                    const  SizedBox(width: 10),
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => const StatutePage()),
+                        );
+                      },
+                      child: const Text(
+                        'ПОЛОЖЕНИЕ',
+                        style: headTextStyle,
+                      ),
+                    ),
+                    const SizedBox(width: 10),
+                    Text(
+                      '/',
+                      style: headTextStyle,
+                    ),
+                    const  SizedBox(width: 10),
                     Text(
                       'СЕКЦИИ',
                       style: headTextStyle,
                     ),
-                    SizedBox(width: 10),
+                    const SizedBox(width: 10),
                     Text(
                       '/',
                       style: headTextStyle,
                     ),
-                    SizedBox(width: 10),
+                    const SizedBox(width: 10),
                     Text(
                       'ОРГАНИЗАТОРЫ',
                       style: headTextStyle,
                     ),
-                    SizedBox(width: 10),
+                    const SizedBox(width: 10),
                     Text(
                       '/',
                       style: headTextStyle,
                     ),
-                    SizedBox(width: 10),
+                    const SizedBox(width: 10),
                     Text(
                       'ЭКСПЕРТЫ',
                       style: headTextStyle,
                     ),
-                    SizedBox(width: 10),
+                    const SizedBox(width: 10),
                     Text(
                       '/',
                       style: headTextStyle,
                     ),
-                    SizedBox(width: 10),
+                    const SizedBox(width: 10),
                     Text(
                       'ПАРТНЁРЫ',
                       style: headTextStyle,
@@ -141,26 +159,31 @@ class _MyHomePageState extends State<MyHomePage> {
                 const SizedBox(
                   height: 100,
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Container(
-                      color: AppPallete.black10,
-                      height: 6,
-                      width: 300,
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Container(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Container(
+                          color: AppPallete.black10,
+                          height: 6,
+                          width: 700,
+                        ),
+                        const SizedBox(width: 30),
+                        const Text(
+                          'СИНТЕЗ НАУКИ И ИСКУССТВА',
+                          style: headTextStyle,
+                        ),
+                        const SizedBox(width: 30),
+                        Container(
+                          color: AppPallete.black10,
+                          height: 6,
+                          width: 700,
+                        ),
+                      ],
                     ),
-                    const SizedBox(width: 30),
-                    const Text(
-                      'СИНТЕЗ НАУКИ И ИСКУССТВА',
-                      style: headTextStyle,
-                    ),
-                    const SizedBox(width: 30),
-                    Container(
-                      color: AppPallete.black10,
-                      height: 6,
-                      width: 300,
-                    ),
-                  ],
+                  ),
                 ),
                 const SizedBox(
                   height: 100,
@@ -248,24 +271,31 @@ class _MyHomePageState extends State<MyHomePage> {
                 const SizedBox(
                   height: 100,
                 ),
-                Container(
-                  height: 160,
-                  width: 500,
-                  decoration: const BoxDecoration(
-                    borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(40),
-                        bottomRight: Radius.circular(40)),
-                    color: AppPallete.labelViolet,
+                InkWell(
+                  onTap: () {},
+                  child: Container(
+                    height: 160,
+                    width: 500,
+                    decoration: const BoxDecoration(
+                      borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(40),
+                          bottomRight: Radius.circular(40)),
+                      color: AppPallete.blue,
+                    ),
+                    child: const Center(
+                        child: Text(
+                      'Подать заявку',
+                      style: TextStyle(fontSize: 35, color: Colors.white),
+                    )),
                   ),
-                  child: const Center(
-                      child: Text(
-                    'Подать заявку',
-                    style: TextStyle(fontSize: 35, color: Colors.white),
-                  )),
                 ),
                 const SizedBox(
                   height: 100,
                 ),
+                //SvgPicture.asset('assets/image/22.png')
+                Image.asset('assets/image/22.png'),
+                Image(image: AssetImage('assets/image/22.png'))
+
               ],
             ),
           ),
