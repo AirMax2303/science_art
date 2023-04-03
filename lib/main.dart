@@ -297,8 +297,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   height: 100,
                 ),
                 //SvgPicture.asset('assets/image/22.png')
-                Image.asset('assets/image/22.png'),
-                Image(image: AssetImage('assets/image/22.png'))
+                Image.asset('assets/22.png'),
+                Image(image: AssetImage('assets/22.png'))
 
               ],
             ),
