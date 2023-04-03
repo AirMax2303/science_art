@@ -1,7 +1,9 @@
 class Candidate {
   Candidate({
     required this.id,
-    required this.fio, // ФИО
+    required this.name, // Имя
+    required this.surname, // Фамилия
+    required this.patronymic, // Отчество
     required this.age_category, // Возрастная категория
     required this.job, // Место работы (только для профессиональных авторов)
     required this.email, // Почта
@@ -11,7 +13,9 @@ class Candidate {
   });
 
   final int id;
-  final String fio;
+  final String name;
+  final String surname;
+  final String patronymic;
   final String age_category;
   final String job;
   final String email;
