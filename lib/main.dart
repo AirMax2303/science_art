@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:science_art/pages/statute_page.dart';
+import 'package:science_art/pages/form_page.dart';
 import 'package:video_player/video_player.dart';
 import 'app/theme/app_pallete.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -86,7 +87,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       ),
                     ),
                     const SizedBox(width: 10),
-                    Text(
+                    const Text(
                       '/',
                       style: headTextStyle,
                     ),
@@ -104,7 +105,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       ),
                     ),
                     const SizedBox(width: 10),
-                    Text(
+                    const Text(
                       '/',
                       style: headTextStyle,
                     ),
@@ -114,7 +115,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       style: headTextStyle,
                     ),
                     const SizedBox(width: 10),
-                    Text(
+                    const Text(
                       '/',
                       style: headTextStyle,
                     ),
@@ -124,7 +125,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       style: headTextStyle,
                     ),
                     const SizedBox(width: 10),
-                    Text(
+                    const Text(
                       '/',
                       style: headTextStyle,
                     ),
@@ -134,7 +135,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       style: headTextStyle,
                     ),
                     const SizedBox(width: 10),
-                    Text(
+                    const Text(
                       '/',
                       style: headTextStyle,
                     ),
@@ -161,28 +162,26 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
                 SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
-                  child: Container(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Container(
-                          color: AppPallete.black10,
-                          height: 6,
-                          width: 700,
-                        ),
-                        const SizedBox(width: 30),
-                        const Text(
-                          'СИНТЕЗ НАУКИ И ИСКУССТВА',
-                          style: headTextStyle,
-                        ),
-                        const SizedBox(width: 30),
-                        Container(
-                          color: AppPallete.black10,
-                          height: 6,
-                          width: 700,
-                        ),
-                      ],
-                    ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Container(
+                        color: AppPallete.black10,
+                        height: 6,
+                        width: 500,
+                      ),
+                      const SizedBox(width: 30),
+                      const Text(
+                        'СИНТЕЗ НАУКИ И ИСКУССТВА',
+                        style: headTextStyle,
+                      ),
+                      const SizedBox(width: 30),
+                      Container(
+                        color: AppPallete.black10,
+                        height: 6,
+                        width: 500,
+                      ),
+                    ],
                   ),
                 ),
                 const SizedBox(
@@ -272,7 +271,12 @@ class _MyHomePageState extends State<MyHomePage> {
                   height: 100,
                 ),
                 InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const FormPage()),
+                    );
+                  },
                   child: Container(
                     height: 160,
                     width: 500,
