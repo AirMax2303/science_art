@@ -67,9 +67,9 @@ class _InputAboutFormState extends State<InputAboutForm> {
             alignment: Alignment.topLeft,
             child: Text(
               widget.labelText,
-              //style: appTheme.textTheme.app16reg.copyWith(
-              //  color: appTheme.colorTheme.black9,
-              //),
+              style: TextStyle(
+                color: AppPallete.blue,
+              ),
             ),
           ),
         const SizedBox(

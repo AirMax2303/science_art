@@ -65,117 +65,142 @@ class _FormPageState extends State<FormPage> {
       ),
     });
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Expanded(
-            child: Column(
-          children: [
-            const SizedBox(height: 10),
-            Padding(
-              padding: const EdgeInsets.only(
-                left: 16.0,
-                right: 16.0,
-              ),
-              child: ReactiveFormBuilder(
-                  form: () => aboutForm,
-                  builder: (context, form, child) {
-                    return Column(children: [
-                      InputAboutForm(
-                        controller: surname,
-                        labelText: 'Фамилия',
-                        hintText: 'Фамилия',
+      body: LayoutBuilder(
+        builder: (context, constaitns) => SingleChildScrollView(
+          child: Expanded(
+              child: Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(
+                    left: 16.0, right: 16.0, bottom: 10.0, top: 5.0),
+                child: InkWell(
+                  onTap: () {
+                    Navigator.pop(context);
+                  },
+                  child: Row(
+                    children: const [
+                      Icon(
+                        Icons.arrow_back_ios,
+                        color: AppPallete.blue,
                       ),
-                      const SizedBox(
-                        height: 10,
+                      Text(
+                        'На главную',
+                        style: TextStyle(
+                          color: AppPallete.blue,
+                        ),
                       ),
-                      InputAboutForm(
-                        controller: name,
-                        labelText: 'Имя',
-                        hintText: 'Имя',
-                      ),
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      InputAboutForm(
-                        controller: patronymic,
-                        labelText: 'Отчество',
-                        hintText: 'Отчество',
-                      ),
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      InputAboutForm(
-                        controller: age_category,
-                        labelText: 'Возратсная категория',
-                        hintText: 'Возратсная категория',
-                      ),
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      InputAboutForm(
-                        controller: job,
-                        labelText: 'Место работы',
-                        hintText: 'Место работы',
-                      ),
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      //GestureDetector(
-                      //    onTap: () {
-                      //      //AppTimePicker.showDatePickerApp(context);
-                      //    },
-                      //    child: const Text('Выбор даты рождения')),
-                      InputAboutForm(
-                        controller: email,
-                        labelText: 'Электронная почта',
-                        hintText: 'Электронная почта',
-                      ),
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      InputAboutForm(
-                        controller: section,
-                        labelText: 'Секция',
-                        hintText: 'Секция',
-                      ),
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      InputAboutForm(
-                        controller: phone_number,
-                        labelText: 'Телефон',
-                        hintText: 'Телефон',
-                      ),
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      InputAboutForm(
-                        controller: leadership,
-                        labelText: 'Руководитель',
-                        hintText: 'Руководитель',
-                      ),
-                    ]);
-                  }),
-            ),
-            InkWell(
-              onTap: () {},
-              child: Container(
-                height: 160,
-                width: 500,
-                decoration: const BoxDecoration(
-                  borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(40),
-                      bottomRight: Radius.circular(40)),
-                  color: AppPallete.blue,
+                    ],
+                  ),
                 ),
-                child: const Center(
-                    child: Text(
-                  'Отправить',
-                  style: TextStyle(fontSize: 35, color: Colors.white),
-                )),
               ),
-            ),
-          ],
-        )),
+              const SizedBox(height: 10),
+              Padding(
+                padding: EdgeInsets.only(
+                  left: MediaQuery.of(context).size.width / 6,
+                  right: MediaQuery.of(context).size.width / 6,
+                ),
+                child: ReactiveFormBuilder(
+                    form: () => aboutForm,
+                    builder: (context, form, child) {
+                      return Column(children: [
+                        InputAboutForm(
+                          controller: surname,
+                          labelText: 'Фамилия',
+                          hintText: '',
+                        ),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        InputAboutForm(
+                          controller: name,
+                          labelText: 'Имя',
+                          hintText: '',
+                        ),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        InputAboutForm(
+                          controller: patronymic,
+                          labelText: 'Отчество',
+                          hintText: '',
+                        ),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        InputAboutForm(
+                          controller: age_category,
+                          labelText: 'Возратсная категория',
+                          hintText: '',
+                        ),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        InputAboutForm(
+                          controller: job,
+                          labelText: 'Место работы',
+                          hintText: '',
+                        ),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        //GestureDetector(
+                        //    onTap: () {
+                        //      //AppTimePicker.showDatePickerApp(context);
+                        //    },
+                        //    child: const Text('Выбор даты рождения')),
+                        InputAboutForm(
+                          controller: email,
+                          labelText: 'Электронная почта',
+                          hintText: '',
+                        ),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        InputAboutForm(
+                          controller: section,
+                          labelText: 'Секция',
+                          hintText: '',
+                        ),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        InputAboutForm(
+                          controller: phone_number,
+                          labelText: 'Телефон',
+                          hintText: '',
+                        ),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        InputAboutForm(
+                          controller: leadership,
+                          labelText: 'Руководитель',
+                          hintText: '',
+                        ),
+                      ]);
+                    }),
+              ),
+              InkWell(
+                onTap: () {},
+                child: Container(
+                  height: 80,
+                  width: 300,
+                  decoration: const BoxDecoration(
+                    borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(40),
+                        bottomRight: Radius.circular(40)),
+                    color: AppPallete.blue,
+                  ),
+                  child: const Center(
+                      child: Text(
+                    'Отправить',
+                    style: TextStyle(fontSize: 25, color: Colors.white),
+                  )),
+                ),
+              ),
+            ],
+          )),
+        ),
       ),
     );
   }
