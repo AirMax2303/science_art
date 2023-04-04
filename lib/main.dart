@@ -38,7 +38,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   void initState() {
     super.initState();
-    _controller = VideoPlayerController.asset('assets/video/space.mp4');
+    _controller = VideoPlayerController.asset('assets/space.mp4');
 
     _controller.addListener(() {
       setState(() {});
@@ -69,7 +69,10 @@ class _MyHomePageState extends State<MyHomePage> {
           child: Expanded(
             child: Column(
               children: [
-                //Container(height: 100,width: 100, child: VideoPlayer(_controller)),
+                Container(height: 1000,width: 2000, child: VideoPlayer(_controller)),
+                //Expanded(
+                //  child: VideoPlayer(_controller),
+                //),
                 const SizedBox(height: 10),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -78,7 +81,8 @@ class _MyHomePageState extends State<MyHomePage> {
                       onTap: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => const MyHomePage()),
+                          MaterialPageRoute(
+                              builder: (context) => const MyHomePage()),
                         );
                       },
                       child: const Text(
@@ -91,12 +95,13 @@ class _MyHomePageState extends State<MyHomePage> {
                       '/',
                       style: headTextStyle,
                     ),
-                    const  SizedBox(width: 10),
+                    const SizedBox(width: 10),
                     InkWell(
                       onTap: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => const StatutePage()),
+                          MaterialPageRoute(
+                              builder: (context) => const StatutePage()),
                         );
                       },
                       child: const Text(
@@ -109,7 +114,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       '/',
                       style: headTextStyle,
                     ),
-                    const  SizedBox(width: 10),
+                    const SizedBox(width: 10),
                     Text(
                       'СЕКЦИИ',
                       style: headTextStyle,
@@ -297,9 +302,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   height: 100,
                 ),
                 //SvgPicture.asset('assets/image/22.png')
-                Image.asset('assets/22.png'),
-                Image(image: AssetImage('assets/22.png'))
-
+                Image.asset('assets/img.png'),
+                Image(image: AssetImage('assets/img.png'))
               ],
             ),
           ),
