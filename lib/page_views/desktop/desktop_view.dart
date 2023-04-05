@@ -182,6 +182,7 @@ class _DesktopViewState extends State<DesktopView> {
                       const SizedBox(
                         height: 20,
                       ),
+                      // Todo: Сделать таймер
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
