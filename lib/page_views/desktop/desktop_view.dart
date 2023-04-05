@@ -283,7 +283,9 @@ class _DesktopViewState extends State<DesktopView> {
                       //SvgPicture.asset('assets/image/22.png')
                       Image.asset('assets/img.png'),
 
-                      Image(image: AssetImage('assets/img.png'))
+//                      Image(image: AssetImage('assets/img.png'));
+                      Image.asset('assets/experts/belpay.jpg'),
+//                      Image.asset('assets/experts/Белпая.jpg'),
                     ],
                   ),
                 ),
