@@ -64,6 +64,16 @@ class _AdminPageState extends State<AdminPage> {
                                   Text('${candidate?.email}'),
                                 ],
                               ),
+                              const SizedBox(width: 5),
+                              Row(
+                                children: [
+                                  Text('${candidate?.insert_date}'),
+                                  const SizedBox(width: 5),
+                                  Text('${candidate?.description}'),
+                                  const SizedBox(width: 5),
+                                  Text('${candidate?.update_date}'),
+                                ],
+                              )
                             ],
                           ),
                         ),

@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 
@@ -15,6 +17,7 @@ class DesktopView extends StatefulWidget {
 
 class _DesktopViewState extends State<DesktopView> {
   late VideoPlayerController _controller;
+  Timer? timer;
 
   @override
   void initState() {
@@ -27,6 +30,16 @@ class _DesktopViewState extends State<DesktopView> {
     _controller.setLooping(true);
     _controller.initialize().then((_) => setState(() {}));
     _controller.play();
+
+    timer = Timer.periodic(
+      const Duration(seconds: 1),
+          (timer) {
+        setState(() {
+
+        });
+      },
+    );
+
   }
 
   @override
@@ -37,6 +50,7 @@ class _DesktopViewState extends State<DesktopView> {
 
   @override
   Widget build(BuildContext context) {
+
     final mediaQuery = MediaQuery.of(context);
     final headTextStyle = TextStyle(fontSize: mediaQuery.size.width / 40);
     final countingDown =
@@ -189,7 +203,8 @@ class _DesktopViewState extends State<DesktopView> {
                           Column(
                             children: [
                               Text(
-                                '30 : ',
+//                                '30 : ',
+                                (DateTime(2023, 5, 3).difference(DateTime.now()).inDays).toString(),
                                 style: countingDown,
                               ),
                               const SizedBox(
@@ -204,7 +219,8 @@ class _DesktopViewState extends State<DesktopView> {
                           Column(
                             children: [
                               Text(
-                                '8 : ',
+//                                '8 : ',
+                                (23 - DateTime.now().hour).toString(),
                                 style: countingDown,
                               ),
                               const SizedBox(
@@ -219,7 +235,8 @@ class _DesktopViewState extends State<DesktopView> {
                           Column(
                             children: [
                               Text(
-                                '44 : ',
+//                                '44 : ',
+                                (59 - DateTime.now().minute).toString(),
                                 style: countingDown,
                               ),
                               const SizedBox(
@@ -234,7 +251,8 @@ class _DesktopViewState extends State<DesktopView> {
                           Column(
                             children: [
                               Text(
-                                '18',
+//                                '18',
+                                (59 - DateTime.now().second).toString(),
                                 style: countingDown,
                               ),
                               const SizedBox(

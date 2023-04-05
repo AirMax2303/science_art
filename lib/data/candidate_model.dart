@@ -8,6 +8,12 @@ class Candidate {
     required this.name, // Имя
     required this.surname, // Фамилия
     required this.patronymic, // Отчество
+/*
+Детский тур (с 2011 г.р.)
+Студенческий тур (2000 - 2015 г.р.)
+Милениалы (1984 - 1999 г.р.)
+Профессиональный тур (до 1983 г.р.)
+ */
     required this.age_category, // Возрастная категория
     required this.job, // Место работы (только для профессиональных авторов)
     required this.email, // Почта
