@@ -4,6 +4,9 @@ import '../../../app/theme/app_pallete.dart';
 import '../../../data/candidate_model.dart';
 import '../../../features/input_about_form.dart';
 import '../../../main.dart';
+import '../../../consts.dart';
+import 'package:hive/hive.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 
 class FormPage extends StatefulWidget {
   const FormPage({Key? key}) : super(key: key);
@@ -182,7 +185,7 @@ class _FormPageState extends State<FormPage> {
                 }),
           ),
           InkWell(
-            onTap: () {
+            onTap: () async {
               candidate_data.surname = surname.value as String;
               candidate_data.name = name.value as String;
               candidate_data.patronymic = patronymic.value as String;
@@ -192,6 +195,9 @@ class _FormPageState extends State<FormPage> {
               candidate_data.section = section.value as String;
               candidate_data.phone_number = phone_number.value as String;
               candidate_data.leadership = leadership.value as String;
+              await Hive.openBox<Candidate>(candidateBoxName);
+              Box<Candidate> candidateBox = Hive.box<Candidate>(candidateBoxName);
+              await candidateBox.add(candidate_data);
             },
             child: Container(
               height: 80,

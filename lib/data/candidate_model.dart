@@ -1,3 +1,7 @@
+import 'package:hive/hive.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+
+@HiveType(typeId: 0)
 class Candidate {
   Candidate({
 //    required this.id,
@@ -17,17 +21,30 @@ class Candidate {
   });
 
 //  int id;
-  String name;
-  String surname;
-  String patronymic;
-  String age_category;
-  String job;
-  String email;
-  String section;
-  String phone_number;
-  String leadership;
-  String insert_date;
-  String description;
-  String update_date;
-  String filename;
+  @HiveField(0)
+  String name = '';
+  @HiveField(1)
+  String surname = '';
+  @HiveField(2)
+  String patronymic = '';
+  @HiveField(3)
+  String age_category = '';
+  @HiveField(4)
+  String job = '';
+  @HiveField(5)
+  String email = '';
+  @HiveField(6)
+  String section = '';
+  @HiveField(7)
+  String phone_number = '';
+  @HiveField(8)
+  String leadership = '';
+  @HiveField(9)
+  String insert_date = '';
+  @HiveField(10)
+  String description = '';
+  @HiveField(11)
+  String update_date = '';
+  @HiveField(12)
+  String filename = '';
 }

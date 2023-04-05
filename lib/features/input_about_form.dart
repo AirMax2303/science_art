@@ -67,7 +67,7 @@ class _InputAboutFormState extends State<InputAboutForm> {
             alignment: Alignment.topLeft,
             child: Text(
               widget.labelText,
-              style: TextStyle(
+              style: const TextStyle(
                 color: AppPallete.blue,
               ),
             ),
@@ -82,7 +82,7 @@ class _InputAboutFormState extends State<InputAboutForm> {
             keyboardType: widget.keyboardType,
             maxLength: widget.maxLength,
             obscureText: widget.isPassword ? _isObscure : false,
-            style: TextStyle(
+            style: const TextStyle(
               //color: appTheme.colorTheme.black5,
             ),
             decoration: InputDecoration(
@@ -101,7 +101,7 @@ class _InputAboutFormState extends State<InputAboutForm> {
                 borderRadius: BorderRadius.circular(4.0),
                 borderSide: !validationError
                     ? BorderSide.none
-                    : BorderSide(color: Colors.red),
+                    : const BorderSide(color: Colors.red),
               ),
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(8.0),

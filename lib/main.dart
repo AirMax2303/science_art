@@ -4,7 +4,9 @@ import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-//part 'main.g.dart';
+import 'consts.dart';
+import 'data/candidate_model.dart';
+part 'candidate_model.g.dart';
 
 //import 'package:science_art/page_views/desktop/features/statute_page.dart';
 //import 'package:science_art/page_views/desktop/features/form_page.dart';
@@ -14,7 +16,11 @@ import 'package:hive_flutter/hive_flutter.dart';
 //import 'dart:io' show Platform;
 //import 'package:flutter_svg/flutter_svg.dart';
 
-void main() {
+
+void main() async {
+  await Hive.initFlutter();
+  Hive.registerAdapter<Candidate>(CandidateAdapter());
+  await Hive.openBox<Candidate>(candidateBoxName);
   runApp(const MyApp());
 }
 

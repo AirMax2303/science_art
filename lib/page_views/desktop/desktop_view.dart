@@ -140,7 +140,7 @@ class _DesktopViewState extends State<DesktopView> {
                       ),
                       SizedBox(height: mediaQuery.size.width / 15),
                       Padding(
-                        padding: EdgeInsets.all(80.0),
+                        padding: const EdgeInsets.all(80.0),
                         child: Text(
                           '||| МЕЖДУНАРОДНАЯ НАУЧНО-ИССЛЕДОВАТЕЛЬСКАЯ ВЫСТАВКА-КОНКУРС SCIENCE ART: SPACE',
                           style: TextStyle(
@@ -191,7 +191,7 @@ class _DesktopViewState extends State<DesktopView> {
                                 '30 : ',
                                 style: countingDown,
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 height: 5,
                               ),
                               Text(
@@ -206,7 +206,7 @@ class _DesktopViewState extends State<DesktopView> {
                                 '8 : ',
                                 style: countingDown,
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 height: 5,
                               ),
                               Text(
@@ -221,7 +221,7 @@ class _DesktopViewState extends State<DesktopView> {
                                 '44 : ',
                                 style: countingDown,
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 height: 5,
                               ),
                               Text(
@@ -236,7 +236,7 @@ class _DesktopViewState extends State<DesktopView> {
                                 '18',
                                 style: countingDown,
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 height: 5,
                               ),
                               Text(
