@@ -33,13 +33,10 @@ class _DesktopViewState extends State<DesktopView> {
 
     timer = Timer.periodic(
       const Duration(seconds: 1),
-          (timer) {
-        setState(() {
-
-        });
+      (timer) {
+        setState(() {});
       },
     );
-
   }
 
   @override
@@ -50,13 +47,12 @@ class _DesktopViewState extends State<DesktopView> {
 
   @override
   Widget build(BuildContext context) {
-
     final mediaQuery = MediaQuery.of(context);
     final headTextStyle = TextStyle(fontSize: mediaQuery.size.width / 40);
     final countingDown =
         TextStyle(fontSize: mediaQuery.size.width / 30, color: AppPallete.blue);
     final timeTextStyle = TextStyle(
-        fontSize: mediaQuery.size.width / 50, color: AppPallete.black4);
+        fontSize: mediaQuery.size.width / 55, color: AppPallete.black4);
     return Scaffold(
       body: LayoutBuilder(
           builder: (context, constraints) => Center(
@@ -65,7 +61,7 @@ class _DesktopViewState extends State<DesktopView> {
                     children: [
                       //Container(height: 900,width: MediaQuery.of(context).size.width, child: VideoPlayer(_controller)),
                       SizedBox(
-                          height: constraints.maxHeight - 200,
+                          height: constraints.maxHeight,
                           width: constraints.maxWidth,
                           child: VideoPlayer(_controller)),
                       const SizedBox(height: 10),
@@ -176,7 +172,7 @@ class _DesktopViewState extends State<DesktopView> {
                             ),
                             const SizedBox(width: 30),
                             Text(
-                              'СИНТЕЗ НАУКИ И ИСКУССТВА',
+                              'СИНТЕЗ  НАУКИ И ИСКУССТВА',
                               style: headTextStyle,
                             ),
                             const SizedBox(width: 30),
@@ -196,7 +192,7 @@ class _DesktopViewState extends State<DesktopView> {
                       const SizedBox(
                         height: 20,
                       ),
-                      // Todo: Сделать таймер
+                      // Todo: Таймер
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -204,7 +200,7 @@ class _DesktopViewState extends State<DesktopView> {
                             children: [
                               Text(
 //                                '30 : ',
-                                (DateTime(2023, 5, 3).difference(DateTime.now()).inDays).toString(),
+                                '${DateTime(2023, 5, 3).difference(DateTime.now()).inDays} : ',
                                 style: countingDown,
                               ),
                               const SizedBox(
@@ -220,7 +216,7 @@ class _DesktopViewState extends State<DesktopView> {
                             children: [
                               Text(
 //                                '8 : ',
-                                (23 - DateTime.now().hour).toString(),
+                                '${23 - DateTime.now().hour} : ',
                                 style: countingDown,
                               ),
                               const SizedBox(
@@ -236,7 +232,7 @@ class _DesktopViewState extends State<DesktopView> {
                             children: [
                               Text(
 //                                '44 : ',
-                                (59 - DateTime.now().minute).toString(),
+                                '${59 - DateTime.now().minute} : ',
                                 style: countingDown,
                               ),
                               const SizedBox(
@@ -282,8 +278,8 @@ class _DesktopViewState extends State<DesktopView> {
                           );
                         },
                         child: Container(
-                          height: mediaQuery.size.width / 10,
-                          width: mediaQuery.size.width / 3,
+                          height: mediaQuery.size.width / 15,
+                          width: mediaQuery.size.width / 4,
                           decoration: const BoxDecoration(
                             borderRadius: BorderRadius.only(
                                 topLeft: Radius.circular(40),
@@ -294,7 +290,7 @@ class _DesktopViewState extends State<DesktopView> {
                               child: Text(
                             'Подать заявку',
                             style: TextStyle(
-                                fontSize: mediaQuery.size.width / 40,
+                                fontSize: mediaQuery.size.width / 45,
                                 color: Colors.white),
                           )),
                         ),

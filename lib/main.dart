@@ -53,7 +53,7 @@ class _MyHomePageState extends State<MyHomePage> {
       body: OrientationBuilder(
         builder: (context, orientation) {
           if (orientation == Orientation.landscape) {
-            // landscape - горизонтальная
+            /// landscape - горизонтальная
             return const DesktopView();
           } else {
             // Todo: MobileView
