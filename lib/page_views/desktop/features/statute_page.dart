@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../app/theme/app_pallete.dart';
-import '../main.dart';
+import '../../../app/theme/app_pallete.dart';
+import '../../../main.dart';
 
 class StatutePage extends StatefulWidget {
   const StatutePage({Key? key}) : super(key: key);
