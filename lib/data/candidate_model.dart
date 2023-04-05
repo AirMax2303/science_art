@@ -12,14 +12,14 @@ class Candidate {
     required this.leadership, // Руководитель (только для младших участников)
   });
 
-  final int id;
-  final String name;
-  final String surname;
-  final String patronymic;
-  final String age_category;
-  final String job;
-  final String email;
-  final String section;
-  final String phone_number;
-  final String leadership;
+  int id;
+  String name;
+  String surname;
+  String patronymic;
+  String age_category;
+  String job;
+  String email;
+  String section;
+  String phone_number;
+  String leadership;
 }

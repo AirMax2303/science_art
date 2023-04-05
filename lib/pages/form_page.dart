@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:reactive_forms/reactive_forms.dart';
 import '../app/theme/app_pallete.dart';
+import '../data/candidate_model.dart';
 import '../features/input_about_form.dart';
 import '../main.dart';
 
@@ -21,6 +22,7 @@ class _FormPageState extends State<FormPage> {
   final section = TextEditingController();
   final phone_number = TextEditingController();
   final leadership = TextEditingController();
+  late Candidate candidate_data;
 
   @override
   Widget build(BuildContext context) {
@@ -181,7 +183,17 @@ class _FormPageState extends State<FormPage> {
                     }),
               ),
               InkWell(
-                onTap: () {},
+                onTap: () {
+                  candidate_data.surname = surname.value as String;
+                  candidate_data.name = name.value as String;
+                  candidate_data.patronymic = patronymic.value as String;
+                  candidate_data.age_category = age_category.value as String;
+                  candidate_data.job = job.value as String;
+                  candidate_data.email = email.value as String;
+                  candidate_data.section = section.value as String;
+                  candidate_data.phone_number = phone_number.value as String;
+                  candidate_data.leadership = leadership.value as String;
+                },
                 child: Container(
                   height: 80,
                   width: 300,
