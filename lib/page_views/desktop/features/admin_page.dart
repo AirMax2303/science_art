@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 
 import '../../../app/theme/app_pallete.dart';
 import '../../../data/candidate_model.dart';
+import '../../../consts.dart';
+import 'package:hive/hive.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+
 
 class AdminPage extends StatefulWidget {
   const AdminPage({Key? key}) : super(key: key);
@@ -19,18 +23,25 @@ class _AdminPageState extends State<AdminPage> {
         TextStyle(fontSize: mediaQuery.size.width / 30, color: AppPallete.blue);
     final timeTextStyle = TextStyle(
         fontSize: mediaQuery.size.width / 50, color: AppPallete.black4);
-    List<Candidate> cadidates = [];
     return Scaffold(
-      body: LayoutBuilder(
-        builder: (context, constraints) => Center(
-          child: SingleChildScrollView(
-            child: Column(
-              children: List.generate(cadidates.length, (index){
-                return Text('');
-              }),
-            ),
-          ),
-        ),
+      body: ValueListenableBuilder(
+          valueListenable: Hive.box<Candidate>(candidateBoxName).listenable(),
+          builder: (context, Box<Candidate> box, _) {
+            if (box.values.isEmpty) {
+              return const Center(
+                child: Text("No orders"),
+              );
+            }
+            return ListView.builder(
+                itemCount: box.values.length,
+                itemBuilder: (context, index) {
+                  Candidate? candidate = box.getAt(index);
+                  return Card(
+                      child: Text('${candidate?.name}')
+                  );
+                }
+            );
+          }
       ),
     );
   }
