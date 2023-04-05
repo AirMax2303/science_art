@@ -281,14 +281,30 @@ class _DesktopViewState extends State<DesktopView> {
                         ),
                       ),
                       SizedBox(height: mediaQuery.size.width / 15),
+                      Divider(
+                        thickness: MediaQuery.of(context).size.width / 300,
+                        height: MediaQuery.of(context).size.width / 300,
+                        color: Colors.black87,
+                      ),
+                      SizedBox(height: mediaQuery.size.width / 15),
                       //SvgPicture.asset('assets/image/22.png')
-                      Image.asset('assets/img.png'),
-
-//                      Image(image: AssetImage('assets/img.png'));
+                      //Image.asset('assets/img.png'),
+                      //Image(image: AssetImage('assets/img.png'));
                       //Image.asset('assets/experts/belpay.jpg'),
-
-                      Image.asset('assets/programs/afiha.jpg'),
-                      Image.asset('assets/programs/prg.jpg'),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          SizedBox(
+                            height: mediaQuery.size.width / 2,
+                            child: Image.asset('assets/programs/afiha.jpg'),
+                          ),
+                          SizedBox(width: mediaQuery.size.width / 30),
+                          SizedBox(
+                            height: mediaQuery.size.width / 2,
+                            child: Image.asset('assets/programs/prg.jpg'),
+                          ),
+                        ],
+                      ),
                       SizedBox(height: mediaQuery.size.width / 15),
                       Text(
                         'Подробно по выставке: Морозкина Елена Анатольевна',
