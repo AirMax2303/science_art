@@ -286,6 +286,7 @@ class _DesktopViewState extends State<DesktopView> {
 
 //                      Image(image: AssetImage('assets/img.png'));
                       //Image.asset('assets/experts/belpay.jpg'),
+
 //                      Image.asset('assets/experts/Белпая.jpg'),
                       SizedBox(height: mediaQuery.size.width / 15),
                       Text(
