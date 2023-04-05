@@ -287,7 +287,8 @@ class _DesktopViewState extends State<DesktopView> {
 //                      Image(image: AssetImage('assets/img.png'));
                       //Image.asset('assets/experts/belpay.jpg'),
 
-//                      Image.asset('assets/experts/Белпая.jpg'),
+                      Image.asset('assets/programs/afiha.jpg'),
+                      Image.asset('assets/programs/prg.jpg'),
                       SizedBox(height: mediaQuery.size.width / 15),
                       Text(
                         'Подробно по выставке: Морозкина Елена Анатольевна',

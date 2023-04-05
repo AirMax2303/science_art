@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:science_art/page_views/desktop/desktop_view.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
+import 'package:hive/hive.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+//part 'main.g.dart';
 
 //import 'package:science_art/page_views/desktop/features/statute_page.dart';
 //import 'package:science_art/page_views/desktop/features/form_page.dart';
