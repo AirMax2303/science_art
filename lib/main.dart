@@ -20,7 +20,6 @@ part 'candidate_model.g.dart';
 void main() async {
   await Hive.initFlutter();
   Hive.registerAdapter<Candidate>(CandidateAdapter());
-  await Hive.openBox<Candidate>(candidateBoxName);
   runApp(const MyApp());
 }
 

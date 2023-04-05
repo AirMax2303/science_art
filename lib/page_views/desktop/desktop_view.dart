@@ -292,7 +292,7 @@ class _DesktopViewState extends State<DesktopView> {
                       //Image.asset('assets/img.png'),
                       //Image(image: AssetImage('assets/img.png'));
                       //Image.asset('assets/experts/belpay.jpg'),
-                      Row(
+/*                      Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           SizedBox(
@@ -306,6 +306,8 @@ class _DesktopViewState extends State<DesktopView> {
                           ),
                         ],
                       ),
+
+ */
                       SizedBox(height: mediaQuery.size.width / 15),
                       Text(
                         'Подробно по выставке: Морозкина Елена Анатольевна',

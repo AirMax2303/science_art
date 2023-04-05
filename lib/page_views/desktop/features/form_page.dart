@@ -25,7 +25,7 @@ class _FormPageState extends State<FormPage> {
   final section = TextEditingController();
   final phone_number = TextEditingController();
   final leadership = TextEditingController();
-  late Candidate candidate_data;
+//  late Candidate candidate_data;
 
   @override
   Widget build(BuildContext context) {
@@ -186,7 +186,7 @@ class _FormPageState extends State<FormPage> {
           ),
           InkWell(
             onTap: () async {
-              candidate_data.surname = surname.value as String;
+/*              candidate_data.surname = surname.value as String;
               candidate_data.name = name.value as String;
               candidate_data.patronymic = patronymic.value as String;
               candidate_data.age_category = age_category.value as String;
@@ -195,9 +195,40 @@ class _FormPageState extends State<FormPage> {
               candidate_data.section = section.value as String;
               candidate_data.phone_number = phone_number.value as String;
               candidate_data.leadership = leadership.value as String;
+
+ */
               await Hive.openBox<Candidate>(candidateBoxName);
               Box<Candidate> candidateBox = Hive.box<Candidate>(candidateBoxName);
-              await candidateBox.add(candidate_data);
+//              await candidateBox.add(candidate_data);
+              await candidateBox.add(Candidate(
+                  name: DateTime.now().toString(),
+                  surname: 'surname.value as String',
+                  patronymic: 'patronymic.value as String',
+                  age_category: 'age_category.value as String',
+                  job: 'job.value as String',
+                  email: 'email.value as String',
+                  section: 'section.value as String',
+                  phone_number: 'phone_number.value as String',
+                  leadership: 'leadership.value as String',
+                  insert_date: DateTime.now().toString(),
+                  description: '',
+                  update_date: '',
+                  filename: ''));
+
+              await candidateBox.add(Candidate(
+                  name: name.value as String,
+                  surname: surname.value as String,
+                  patronymic: patronymic.value as String,
+                  age_category: age_category.value as String,
+                  job: job.value as String,
+                  email: email.value as String,
+                  section: section.value as String,
+                  phone_number: phone_number.value as String,
+                  leadership: leadership.value as String,
+                  insert_date: DateTime.now().toString(),
+                  description: '',
+                  update_date: '',
+                  filename: ''));
             },
             child: Container(
               height: 80,
