@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 
 import '../../app/theme/app_pallete.dart';
+import 'features/admin_page.dart';
 import 'features/statute_page.dart';
 import 'features/form_page.dart';
 
@@ -284,8 +285,47 @@ class _DesktopViewState extends State<DesktopView> {
                       Image.asset('assets/img.png'),
 
 //                      Image(image: AssetImage('assets/img.png'));
-                      Image.asset('assets/experts/belpay.jpg'),
+                      //Image.asset('assets/experts/belpay.jpg'),
 //                      Image.asset('assets/experts/Белпая.jpg'),
+                      SizedBox(height: mediaQuery.size.width / 15),
+                      Text(
+                        'Подробно по выставке: Морозкина Елена Анатольевна',
+                        style: TextStyle(
+                            fontSize: mediaQuery.size.width / 60,
+                            color: AppPallete.black4),
+                      ),
+                      Text(
+                        '89002758888 morozkinaelena@mail.ru',
+                        style: TextStyle(
+                            fontSize: mediaQuery.size.width / 60,
+                            color: AppPallete.black4),
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            '2023',
+                            style: TextStyle(
+                                fontSize: mediaQuery.size.width / 60,
+                                color: AppPallete.black4),
+                          ),
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const AdminPage()),
+                              );
+                            },
+                            child: Text(
+                              ' ©',
+                              style: TextStyle(
+                                  fontSize: mediaQuery.size.width / 60,
+                                  color: AppPallete.black4),
+                            ),
+                          ),
+                        ],
+                      ),
                     ],
                   ),
                 ),
