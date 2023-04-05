@@ -1,6 +1,6 @@
 class Candidate {
   Candidate({
-    required this.id,
+//    required this.id,
     required this.name, // Имя
     required this.surname, // Фамилия
     required this.patronymic, // Отчество
@@ -10,9 +10,13 @@ class Candidate {
     required this.section, // Секция конкурса
     required this.phone_number, // Номер телефона
     required this.leadership, // Руководитель (только для младших участников)
+    required this.insert_date,
+    required this.description,
+    required this.update_date,
+    required this.filename
   });
 
-  int id;
+//  int id;
   String name;
   String surname;
   String patronymic;
@@ -22,4 +26,8 @@ class Candidate {
   String section;
   String phone_number;
   String leadership;
+  String insert_date;
+  String description;
+  String update_date;
+  String filename;
 }
