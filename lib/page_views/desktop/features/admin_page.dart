@@ -37,7 +37,38 @@ class _AdminPageState extends State<AdminPage> {
                 itemBuilder: (context, index) {
                   Candidate? candidate = box.getAt(index);
                   return Card(
-                      child: Text('${candidate?.name}')
+                      child: Container(
+                        decoration:  BoxDecoration(
+                          borderRadius: BorderRadius.circular(10)
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Column(
+                            children: [
+                              Row(
+                                children: [
+                                  Text('${candidate?.name}'),
+                                  const SizedBox(width: 5),
+                                  Text('${candidate?.surname}'),
+                                  const SizedBox(width: 5),
+                                  Text('${candidate?.patronymic}'),
+                                ],
+                              ),
+                              const SizedBox(width: 5),
+                              Row(
+                                children: [
+                                  Text('${candidate?.phone_number}'),
+                                  const SizedBox(width: 5),
+                                  Text('${candidate?.age_category}'),
+                                  const SizedBox(width: 5),
+                                  Text('${candidate?.email}'),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    //Text('${candidate?.name}')
                   );
                 }
             );
