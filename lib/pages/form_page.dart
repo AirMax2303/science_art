@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:reactive_forms/reactive_forms.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 import '../app/theme/app_pallete.dart';
 import '../data/candidate_model.dart';
 import '../features/input_about_form.dart';
@@ -13,6 +14,7 @@ class FormPage extends StatefulWidget {
 }
 
 class _FormPageState extends State<FormPage> {
+  final supabase = Supabase.instance.client;
   final name = TextEditingController();
   final surname = TextEditingController();
   final patronymic = TextEditingController();
@@ -183,16 +185,27 @@ class _FormPageState extends State<FormPage> {
                     }),
               ),
               InkWell(
-                onTap: () {
-                  candidate_data.surname = surname.value as String;
-                  candidate_data.name = name.value as String;
-                  candidate_data.patronymic = patronymic.value as String;
-                  candidate_data.age_category = age_category.value as String;
-                  candidate_data.job = job.value as String;
-                  candidate_data.email = email.value as String;
-                  candidate_data.section = section.value as String;
-                  candidate_data.phone_number = phone_number.value as String;
-                  candidate_data.leadership = leadership.value as String;
+                onTap: () async {
+                  //candidate_data.surname = surname.value as String;
+                  //candidate_data.name = name.value as String;
+                  //candidate_data.patronymic = patronymic.value as String;
+                  //candidate_data.age_category = age_category.value as String;
+                  //candidate_data.job = job.value as String;
+                  //candidate_data.email = email.value as String;
+                  //candidate_data.section = section.value as String;
+                  //candidate_data.phone_number = phone_number.value as String;
+                  //candidate_data.leadership = leadership.value as String;
+                  await supabase.from('orders').insert({
+                    'surname': surname.value as String,
+                    'name': name.value as String,
+                    'patronymic': patronymic.value as String,
+                    'age_category': age_category.value as String,
+                    'job': job.value as String,
+                    'email': email.value as String,
+                    'section': section.value as String,
+                    'phone_number': phone_number.value as String,
+                    'leadership': leadership.value as String,
+                  });
                 },
                 child: Container(
                   height: 80,

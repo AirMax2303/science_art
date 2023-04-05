@@ -1,13 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:science_art/pages/statute_page.dart';
 import 'package:science_art/pages/form_page.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:video_player/video_player.dart';
 import 'app/theme/app_pallete.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'dart:io' show Platform;
 import 'package:flutter_svg/flutter_svg.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await Supabase.initialize(
+    url: 'https://gcddhgfkoeirakojcgkg.supabase.co',
+    anonKey:
+    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdjZGRoZ2Zrb2VpcmFrb2pjZ2tnIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODA1MzcwNjYsImV4cCI6MTk5NjExMzA2Nn0.eBu-XM3o7dh6GsqBC6aNwzhsyfemZ-2llVHOaxwI4-g',
+  );
+
   runApp(const MyApp());
 }
 
@@ -283,6 +292,31 @@ class _MyHomePageState extends State<MyHomePage> {
                           const SizedBox(
                             height: 100,
                           ),
+                          InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const AdminWidget()),
+                              );
+                            },
+                            child: Container(
+                              height: 160,
+                              width: 500,
+                              decoration: const BoxDecoration(
+                                borderRadius: BorderRadius.only(
+                                    topLeft: Radius.circular(40),
+                                    bottomRight: Radius.circular(40)),
+                                color: AppPallete.blue,
+                              ),
+                              child: const Center(
+                                  child: Text(
+                                    'Admin',
+                                    style: TextStyle(
+                                        fontSize: 35, color: Colors.white),
+                                  )),
+                            ),
+                          ),
                           const Divider(
                             thickness: 6,
                             height: 6,
@@ -332,3 +366,80 @@ class _MyHomePageState extends State<MyHomePage> {
     return Text('Android');
   }
 }
+
+class AdminWidget extends StatefulWidget {
+  const AdminWidget({Key? key}) : super(key: key);
+
+  @override
+  State<AdminWidget> createState() => _AdminWidgetState();
+}
+
+class _AdminWidgetState extends State<AdminWidget> {
+  final _orders = Supabase.instance.client
+      .from('orders')
+      .select<List<Map<String, dynamic>>>();
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: FutureBuilder<List<Map<String, dynamic>>>(
+        future: _orders,
+        builder: (context, snapshot) {
+          if (!snapshot.hasData) {
+            return const Center(child: CircularProgressIndicator());
+          }
+//          final menus = snapshot.data!;
+          return _MenuItems(orders: snapshot.data!);
+        },
+      ),
+    );
+  }
+}
+
+class _MenuItems extends StatelessWidget {
+  const _MenuItems({
+    Key? key,
+    required this.orders,
+  }) : super(key: key);
+
+  final List<Map<String, dynamic>> orders;
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView.builder(
+      itemCount: orders.length,
+      itemBuilder: ((context, index) {
+        final order = orders[index];
+        return ListTile(
+          title: Expanded(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Expanded(
+                    child: Text(
+                      order['name'],
+                      maxLines: 2,
+                    )),
+              ],
+            ),
+          ),
+          subtitle: Text(order['name']),
+          trailing: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              InkWell(
+                child: const Icon(Icons.shopping_basket_outlined),
+                onTap: () {},
+              ),
+              InkWell(
+                child: const Icon(Icons.favorite_outline),
+                onTap: () {},
+              ),
+            ],
+          ),
+        );
+      }),
+    );
+  }
+}
+
