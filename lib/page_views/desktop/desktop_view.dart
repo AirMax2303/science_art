@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
@@ -7,6 +8,7 @@ import '../../app/theme/app_pallete.dart';
 import 'features/admin_page.dart';
 import 'features/statute_page.dart';
 import 'features/form_page.dart';
+import 'package:http/http.dart' as http;
 
 class DesktopView extends StatefulWidget {
   const DesktopView({Key? key}) : super(key: key);
@@ -18,6 +20,15 @@ class DesktopView extends StatefulWidget {
 class _DesktopViewState extends State<DesktopView> {
   late VideoPlayerController _controller;
   Timer? timer;
+  String dat = '';
+  Map<String, String> get headers => {
+    'Content-Type': 'application/json'
+  };
+  //var url = 'http://science-art.pro/work_db/list.php';
+
+  Future<http.Response> fetchAlbum() {
+    return http.get(Uri.parse('http://science-art.pro/work_db/test.php'));
+  }
 
   @override
   void initState() {
@@ -37,6 +48,7 @@ class _DesktopViewState extends State<DesktopView> {
         setState(() {});
       },
     );
+    dat = fetchAlbum().toString();
   }
 
   @override
@@ -302,6 +314,9 @@ class _DesktopViewState extends State<DesktopView> {
                         color: Colors.black87,
                       ),
                       SizedBox(height: mediaQuery.size.width / 15),
+                      Text('Участники', style: headTextStyle),
+                      SizedBox(height: mediaQuery.size.width / 20),
+                      Text(dat),
                       //SvgPicture.asset('assets/image/22.png')
                       //Image.asset('assets/img.png'),
                       //Image(image: AssetImage('assets/img.png'));

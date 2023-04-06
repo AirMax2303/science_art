@@ -73,7 +73,7 @@ class _AdminPageState extends State<AdminPage> {
                                   const SizedBox(width: 5),
                                   Text('${candidate?.update_date}'),
                                 ],
-                              )
+                              ),
                             ],
                           ),
                         ),
