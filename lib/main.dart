@@ -58,7 +58,7 @@ class _MyHomePageState extends State<MyHomePage> {
             return const DesktopView();
           } else {
             // Todo: MobileView
-            return const DesktopView(); //Text(MediaQuery.of(context).orientation.toString());
+            return const MobileView(); //Text(MediaQuery.of(context).orientation.toString());
           }
         },
       ),

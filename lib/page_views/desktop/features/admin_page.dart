@@ -57,9 +57,9 @@ class _AdminPageState extends State<AdminPage> {
                               const SizedBox(width: 5),
                               Row(
                                 children: [
-                                  Text('${candidate?.phone_number}'),
+                                  Text('${candidate?.phoneNumber}'),
                                   const SizedBox(width: 5),
-                                  Text('${candidate?.age_category}'),
+                                  Text('${candidate?.ageCategory}'),
                                   const SizedBox(width: 5),
                                   Text('${candidate?.email}'),
                                 ],
@@ -67,13 +67,13 @@ class _AdminPageState extends State<AdminPage> {
                               const SizedBox(width: 5),
                               Row(
                                 children: [
-                                  Text('${candidate?.insert_date}'),
+                                  Text('${candidate?.insertDate}'),
                                   const SizedBox(width: 5),
                                   Text('${candidate?.description}'),
                                   const SizedBox(width: 5),
-                                  Text('${candidate?.update_date}'),
+                                  Text('${candidate?.updateDate}'),
                                 ],
-                              ),
+                              )
                             ],
                           ),
                         ),
