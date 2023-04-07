@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:science_art/page_views/desktop/desktop_view.dart';
+import 'package:science_art/page_views/mobile/mobile_view.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'consts.dart';
 import 'data/candidate_model.dart';
+
 part 'candidate_model.g.dart';
 
 //import 'package:science_art/page_views/desktop/features/statute_page.dart';
@@ -15,7 +17,6 @@ part 'candidate_model.g.dart';
 //import 'package:flutter/foundation.dart' show kIsWeb;
 //import 'dart:io' show Platform;
 //import 'package:flutter_svg/flutter_svg.dart';
-
 
 void main() async {
   await Hive.initFlutter();
@@ -57,7 +58,7 @@ class _MyHomePageState extends State<MyHomePage> {
             return const DesktopView();
           } else {
             // Todo: MobileView
-            return Text(MediaQuery.of(context).orientation.toString());
+            return const MobileView(); //Text(MediaQuery.of(context).orientation.toString());
           }
         },
       ),

@@ -1,9 +1,7 @@
 import 'dart:async';
 import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
-
 import '../../app/theme/app_pallete.dart';
 import 'features/admin_page.dart';
 import 'features/statute_page.dart';
