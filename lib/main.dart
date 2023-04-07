@@ -8,8 +8,6 @@ import 'package:hive_flutter/hive_flutter.dart';
 import 'consts.dart';
 import 'data/candidate_model.dart';
 
-part 'candidate_model.g.dart';
-
 //import 'package:science_art/page_views/desktop/features/statute_page.dart';
 //import 'package:science_art/page_views/desktop/features/form_page.dart';
 //import 'package:video_player/video_player.dart';
@@ -20,7 +18,6 @@ part 'candidate_model.g.dart';
 
 void main() async {
   await Hive.initFlutter();
-  Hive.registerAdapter<Candidate>(CandidateAdapter());
   runApp(const MyApp());
 }
 

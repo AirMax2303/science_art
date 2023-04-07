@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../../app/theme/app_pallete.dart';
 import '../desktop_view.dart';
-import '../features/statute_page.dart';
+import '../pages/statute_page.dart';
 
 class HeaderWidget extends StatefulWidget {
   const HeaderWidget({Key? key}) : super(key: key);
