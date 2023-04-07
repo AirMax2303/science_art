@@ -4,6 +4,12 @@ var age_categoryes = [
   'Милениалы (1984 - 1999 г.р.)',
   'Профессиональный тур (до 1983 г.р.)'];
 
+var age_categoryes_min = [
+  'Дети',
+  'Студенты',
+  'Милениалы',
+  'Профессионалы'];
+
 var age_category_indexes = [0, 1, 2, 3];
 
 var sections = [
@@ -17,13 +23,21 @@ class User {
   String? id;
   String? name;
   String? pass;
+  String? type;
+  String? email;
+  String? phone;
+  String? photo;
 
-  User({this.id, this.name, this.pass});
+  User({this.id, this.name, this.pass, this.type, this.email, this.phone});
 
   User.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     name = json['name'];
     pass = json['pass'];
+    type = json['type'];
+    email = json['email'];
+    phone = json['phone'];
+    phone = json['photo'];
   }
 
   Map<String, dynamic> toJson() {
@@ -31,6 +45,10 @@ class User {
     data['id'] = id;
     data['name'] = name;
     data['pass'] = pass;
+    data['type'] = type;
+    data['email'] = email;
+    data['phone'] = phone;
+    data['phone'] = photo;
     return data;
   }
 }

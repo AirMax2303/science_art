@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({super.key, required this.title});
+class UsersPage extends StatefulWidget {
+  const UsersPage({super.key, required this.title});
   final String title;
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<UsersPage> createState() => _UsersPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _UsersPageState extends State<UsersPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,7 +20,7 @@ class _LoginPageState extends State<LoginPage> {
         title: Text(widget.title),
       ),
       body: Center(
-          child: Text(widget.title)
+        child: Text(widget.title)
       ),
     );
   }
