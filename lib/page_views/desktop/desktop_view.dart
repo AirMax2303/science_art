@@ -32,7 +32,7 @@ class _DesktopViewState extends State<DesktopView> {
   @override
   void initState() {
     super.initState();
-    _controller = VideoPlayerController.asset('assets/space.mp4');
+    _controller = VideoPlayerController.asset('assets/space2.mp4');
 
     _controller.addListener(() {
       setState(() {});
