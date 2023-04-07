@@ -2,7 +2,7 @@ import '../app/theme/app_pallete.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:reactive_forms/reactive_forms.dart';
+//import 'package:reactive_forms/reactive_forms.dart';
 
 class InputAboutForm extends StatefulWidget {
   final String labelText;

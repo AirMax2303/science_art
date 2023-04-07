@@ -5,7 +5,7 @@ import 'package:video_player/video_player.dart';
 import '../../app/theme/app_pallete.dart';
 import 'features/admin_page.dart';
 import 'features/statute_page.dart';
-import 'features/form_page.dart';
+//import 'features/form_page.dart';
 import 'package:http/http.dart' as http;
 
 class DesktopView extends StatefulWidget {
@@ -284,8 +284,8 @@ class _DesktopViewState extends State<DesktopView> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => const FormPage()),
-                          );
+                                builder: (context) => const Text('TODO')//FormPage()),
+                          ));
                         },
                         child: Container(
                           height: mediaQuery.size.width / 15,
