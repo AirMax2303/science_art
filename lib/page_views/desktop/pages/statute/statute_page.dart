@@ -4,8 +4,8 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter_widget_from_html/flutter_widget_from_html.dart';
 import 'package:webview_flutter/webview_flutter.dart';
-import '../../../app/theme/app_pallete.dart';
-import '../widgets/header_widget.dart';
+import '../../../../app/theme/app_pallete.dart';
+import '../../widgets/header_widget.dart';
 import 'package:webview_flutter_wkwebview/webview_flutter_wkwebview.dart';
 import 'package:flutter/services.dart' show rootBundle;
 

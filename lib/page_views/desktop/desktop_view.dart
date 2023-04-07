@@ -5,7 +5,7 @@ import 'package:science_art/page_views/desktop/widgets/header_widget.dart';
 import 'package:video_player/video_player.dart';
 import '../../app/theme/app_pallete.dart';
 import 'features/admin_page.dart';
-import 'pages/statute_page.dart';
+import 'pages/statute/statute_page.dart';
 import 'features/form_page.dart';
 import 'package:http/http.dart' as http;
 

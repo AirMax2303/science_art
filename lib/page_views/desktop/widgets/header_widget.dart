@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import '../../../app/theme/app_pallete.dart';
 import '../desktop_view.dart';
-import '../pages/statute_page.dart';
+import '../pages/organizers/organizers_page.dart';
+import '../pages/statute/statute_page.dart';
 
 class HeaderWidget extends StatefulWidget {
   const HeaderWidget({Key? key}) : super(key: key);
@@ -16,7 +17,7 @@ class _HeaderWidgetState extends State<HeaderWidget> {
     final mediaQuery = MediaQuery.of(context);
     final headTextStyle = TextStyle(fontSize: mediaQuery.size.width / 40);
     final countingDown =
-    TextStyle(fontSize: mediaQuery.size.width / 30, color: AppPallete.blue);
+        TextStyle(fontSize: mediaQuery.size.width / 30, color: AppPallete.blue);
     final timeTextStyle = TextStyle(
         fontSize: mediaQuery.size.width / 50, color: AppPallete.black4);
     return Wrap(
@@ -27,8 +28,7 @@ class _HeaderWidgetState extends State<HeaderWidget> {
           onTap: () {
             Navigator.push(
               context,
-              MaterialPageRoute(
-                  builder: (context) => const DesktopView()),
+              MaterialPageRoute(builder: (context) => const DesktopView()),
             );
           },
           child: Text(
@@ -46,8 +46,7 @@ class _HeaderWidgetState extends State<HeaderWidget> {
           onTap: () {
             Navigator.push(
               context,
-              MaterialPageRoute(
-                  builder: (context) => const StatutePage()),
+              MaterialPageRoute(builder: (context) => const StatutePage()),
             );
           },
           child: Text(
@@ -71,9 +70,17 @@ class _HeaderWidgetState extends State<HeaderWidget> {
           style: headTextStyle,
         ),
         const SizedBox(width: 10),
-        Text(
-          'ОРГАНИЗАТОРЫ',
-          style: headTextStyle,
+        InkWell(
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const OrganizersPage()),
+            );
+          },
+          child: Text(
+            'ОРГАНИЗАТОРЫ',
+            style: headTextStyle,
+          ),
         ),
         const SizedBox(width: 10),
         Text(
