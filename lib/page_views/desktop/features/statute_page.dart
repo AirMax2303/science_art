@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../../app/theme/app_pallete.dart';
 import '../desktop_view.dart';
+import '../widgets/header_widget.dart';
 
 class StatutePage extends StatefulWidget {
   const StatutePage({Key? key}) : super(key: key);
@@ -13,118 +14,122 @@ class _StatutePageState extends State<StatutePage> {
   @override
   Widget build(BuildContext context) {
     final mediaQuery = MediaQuery.of(context);
-    final headTextStyle = TextStyle(fontSize: mediaQuery.size.width / 40);
-    final countingDown =
-    TextStyle(fontSize: mediaQuery.size.width / 30, color: AppPallete.blue);
-    final timeTextStyle = TextStyle(
-        fontSize: mediaQuery.size.width / 50, color: AppPallete.black4);
-    return Scaffold(
-      body: LayoutBuilder(
-          builder: (context, constraints) => SingleChildScrollView(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Wrap(
-                          alignment: WrapAlignment.center,
-                          //mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            InkWell(
-                              onTap: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) =>
-                                          const DesktopView()),
-                                );
-                              },
-                              child: Text(
-                                'КОНКУРС',
-                                style: headTextStyle,
-                              ),
-                            ),
-                            const SizedBox(width: 10),
-                            Text(
-                              '/',
-                              style: headTextStyle,
-                            ),
-                            const SizedBox(width: 10),
-                            InkWell(
-                              onTap: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) =>
-                                          const StatutePage()),
-                                );
-                              },
-                              child: Text(
-                                'ПОЛОЖЕНИЕ',
-                                style: headTextStyle,
-                              ),
-                            ),
-                            const SizedBox(width: 10),
-                            Text(
-                              '/',
-                              style: headTextStyle,
-                            ),
-                            const SizedBox(width: 10),
-                            Text(
-                              'СЕКЦИИ',
-                              style: headTextStyle,
-                            ),
-                            const SizedBox(width: 10),
-                            Text(
-                              '/',
-                              style: headTextStyle,
-                            ),
-                            const SizedBox(width: 10),
-                            Text(
-                              'ОРГАНИЗАТОРЫ',
-                              style: headTextStyle,
-                            ),
-                            const SizedBox(width: 10),
-                            Text(
-                              '/',
-                              style: headTextStyle,
-                            ),
-                            const SizedBox(width: 10),
-                            Text(
-                              'ЭКСПЕРТЫ',
-                              style: headTextStyle,
-                            ),
-                            const SizedBox(width: 10),
-                            Text(
-                              '/',
-                              style: headTextStyle,
-                            ),
-                            const SizedBox(width: 10),
-                            Text(
-                              'ПАРТНЁРЫ',
-                              style: headTextStyle,
-                            ),
-                          ],
-                        ),
+    final simpleText = TextStyle(fontSize: mediaQuery.size.width / 60);
 
-                      SizedBox(height: mediaQuery.size.width / 15),
-                      Padding(
-                        padding: const EdgeInsets.all(80.0),
-                        child: Text(
-                          'ПОЛОЖЕНИЕ III МЕЖДУНАРОДНОЙ НАУЧНО-ИССЛЕДОВАТЕЛЬСКОЙ ВЫСТАВКИ-КОНКУРСА SCIENCE ART: SPACE',
-                          style: TextStyle(
-                              fontSize: MediaQuery.of(context).size.width / 30,
-                              fontWeight: FontWeight.w600),
-                          textAlign: TextAlign.center,
-                        ),
-                      ),
-                      SizedBox(height: mediaQuery.size.width / 40),
+    return Scaffold(
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Center(child: HeaderWidget()),
+            SizedBox(height: mediaQuery.size.width / 15),
+            Text(
+              'ПОЛОЖЕНИЕ III МЕЖДУНАРОДНОЙ НАУЧНО-ИССЛЕДОВАТЕЛЬСКОЙ ВЫСТАВКИ-КОНКУРСА SCIENCE ART: SPACE',
+              style: TextStyle(
+                  fontSize: MediaQuery.of(context).size.width / 40,
+                  fontWeight: FontWeight.w600),
+              textAlign: TextAlign.center,
+            ),
+            SizedBox(height: mediaQuery.size.width / 15),
+            //RichText(
+            //  text: TextSpan(
+            //    //text: 'Hello ',
+            //    style: TextStyle(fontSize: MediaQuery.of(context).size.width / 60),
+            //    children: const <TextSpan>[
+            //      TextSpan(text: 'Организаторы', style: TextStyle(fontWeight: FontWeight.bold)),
+            //      TextSpan(text: ' ФГБОУ  ВО «Кубанский государственный университет»:'),
+            //      TextSpan(text: ' Кафедра ДПИ и дизайна художественно-графического факультета;'),
+            //    ],
+            //  ),
+            //),
+            Padding(
+              padding: EdgeInsets.only(
+                left: mediaQuery.size.width / 90,
+                right: mediaQuery.size.width / 90,
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    children: [
                       Text(
-                        'ПАРТНЁРЫ',
-                        style: headTextStyle,
+                        'Организаторы',
+                        style: simpleText.copyWith(fontWeight: FontWeight.bold),
+                      ),
+                      const SizedBox(width: 10),
+                      Text(
+                        'ФГБОУ  ВО «Кубанский государственный университет»:',
+                        style: simpleText,
                       ),
                     ],
                   ),
-                ),
+                  Text(
+                    'Кафедра ДПИ и дизайна художественно-графического факультета;',
+                    style: simpleText,
+                  ),
+                  Text(
+                    'Кафедра анализа данных и искусственного интеллекта факультета компьютерных технологий и прикладной математики;',
+                    style: simpleText,
+                  ),
+                  Text(
+                    'Кафедра истории и правового регулирования массовых коммуникаций факультета журналистики;',
+                    style: simpleText,
+                  ),
+                  Text(
+                    'МУ ДО «Детская художественная школа» им.В.А.Филиппова муниципального образования город Краснодар',
+                    style: simpleText,
+                  ),
+                  SizedBox(height: mediaQuery.size.width / 25),
+                  Wrap(
+                    children: [
+                      Text(
+                        'Партнёры: ',
+                        style: simpleText.copyWith(fontWeight: FontWeight.bold),
+                      ),
+                      Text(
+                        'ООО Экстраверт, ',
+                        style: simpleText,
+                      ),
+                      Text(
+                        'Краснодарское региональное отделение общественной организации «Союз дизайнеров ',
+                        style: simpleText,
+                      ),
+                      Text(
+                        'России», ',
+                        style: simpleText,
+                      ),
+                      Text(
+                        'Технопарк КубГУ, ',
+                        style: simpleText,
+                      ),
+                      Text(
+                        'Точка кипения  КубГУ, ',
+                        style: simpleText,
+                      ),
+                      Text(
+                        'ООО «Рекламный дом Кубани», ',
+                        style: simpleText,
+                      ),
+                      Text(
+                        'информационный портал cityposter.ru, ',
+                        style: simpleText,
+                      ),
+                      Text(
+                        'газета “Кубанские новости», ',
+                        style: simpleText,
+                      ),
+                      Text(
+                        'телеграмм-канал «Наука и точка»',
+                        style: simpleText,
+                      ),
+                    ],
+                  ),
+                ],
               ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
