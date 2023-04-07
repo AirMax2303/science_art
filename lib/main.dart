@@ -6,7 +6,7 @@ import 'package:path/path.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'consts.dart';
-import 'data/candidate_model.dart';
+import '/model/user_model.dart';
 
 
 

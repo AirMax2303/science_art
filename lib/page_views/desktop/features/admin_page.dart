@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../app/theme/app_pallete.dart';
-import '../../../data/candidate_model.dart';
+import '/model/user_model.dart';
 import '../../../consts.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';

@@ -41,7 +41,7 @@ class _MobileViewState extends State<MobileView> {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => const UsersPage(title: 'Пользователи',)),
+                    MaterialPageRoute(builder: (context) => const UsersPage()),
                   );
                 },
                 child: const Text('Пользователи')),
@@ -54,6 +54,7 @@ class _MobileViewState extends State<MobileView> {
                   );
                 },
                 child: const Text('Участники')),
+            Image.network('https://science-art.pro/experts/denisenko.jpg')
           ],
         ),
       ),

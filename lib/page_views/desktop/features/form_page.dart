@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 //import 'package:reactive_forms/reactive_forms.dart';
 import '../../../app/theme/app_pallete.dart';
-import '../../../data/candidate_model.dart';
+import '/model/user_model.dart';
 import '../../../features/input_about_form.dart';
 import '../../../main.dart';
 import '../../../consts.dart';
