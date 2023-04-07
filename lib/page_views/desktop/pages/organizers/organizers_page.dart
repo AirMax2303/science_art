@@ -33,7 +33,6 @@ class _OrganizersPageState extends State<OrganizersPage> {
                 //textAlign: TextAlign.center,
               ),
             ),
-
           ],
         ),
       ),
