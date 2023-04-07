@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:science_art/page_views/desktop/desktop_view.dart';
+import 'package:science_art/page_views/mobile/mobile_view.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'consts.dart';
 import 'data/candidate_model.dart';
-import '/page_views/mobile/mobile_view.dart';
 
+part 'candidate_model.g.dart';
 
 //import 'package:science_art/page_views/desktop/features/statute_page.dart';
 //import 'package:science_art/page_views/desktop/features/form_page.dart';
@@ -17,9 +18,9 @@ import '/page_views/mobile/mobile_view.dart';
 //import 'dart:io' show Platform;
 //import 'package:flutter_svg/flutter_svg.dart';
 
-
 void main() async {
   await Hive.initFlutter();
+  Hive.registerAdapter<Candidate>(CandidateAdapter());
   runApp(const MyApp());
 }
 
@@ -53,11 +54,11 @@ class _MyHomePageState extends State<MyHomePage> {
       body: OrientationBuilder(
         builder: (context, orientation) {
           if (orientation == Orientation.landscape) {
-            // landscape - горизонтальная
+            /// landscape - горизонтальная
             return const DesktopView();
           } else {
-            return const MobileView();
-            return Text(MediaQuery.of(context).orientation.toString());
+            // Todo: MobileView
+            return const MobileView(); //Text(MediaQuery.of(context).orientation.toString());
           }
         },
       ),
