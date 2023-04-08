@@ -83,7 +83,7 @@ class _DesktopViewState extends State<DesktopView> {
                     const HeaderWidget(),
                     SizedBox(height: mediaQuery.size.width / 15),
                     Text(
-                      '||| МЕЖДУНАРОДНАЯ НАУЧНО-ИССЛЕДОВАТЕЛЬСКАЯ ВЫСТАВКА-КОНКУРС Искусство и наука',
+                      'III МЕЖДУНАРОДНАЯ НАУЧНО-ИССЛЕДОВАТЕЛЬКАЯ ВЫСТАВКА-КОНКУРС ИСКУССТВО И НАУКА: КОСМОС',
                       style: TextStyle(
                           fontSize: MediaQuery.of(context).size.width / 30,
                           fontWeight: FontWeight.w600),

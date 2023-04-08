@@ -60,16 +60,6 @@ class _HeaderWidgetState extends State<HeaderWidget> {
           style: headTextStyle,
         ),
         const SizedBox(width: 10),
-        Text(
-          'СЕКЦИИ',
-          style: headTextStyle,
-        ),
-        const SizedBox(width: 10),
-        Text(
-          '/',
-          style: headTextStyle,
-        ),
-        const SizedBox(width: 10),
         InkWell(
           onTap: () {
             Navigator.push(
