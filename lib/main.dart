@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:science_art/page_views/desktop/desktop_view.dart';
 import 'package:science_art/page_views/mobile/mobile_view.dart';
 import 'package:sqflite/sqflite.dart';
@@ -7,8 +8,7 @@ import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'consts.dart';
 import '/model/user_model.dart';
-
-
+import 'consts.dart';
 
 //import 'package:science_art/page_views/desktop/features/statute_page.dart';
 //import 'package:science_art/page_views/desktop/features/form_page.dart';
@@ -18,9 +18,17 @@ import '/model/user_model.dart';
 //import 'dart:io' show Platform;
 //import 'package:flutter_svg/flutter_svg.dart';
 
-void main() async {
-  await Hive.initFlutter();
+Future<String> loadAsset() async {
+  return await rootBundle.loadString('assets/prg.txt');
+}
+
+void main()  {
+//  await Hive.initFlutter();
 //  Hive.registerAdapter<Candidate>(CandidateAdapter());
+  WidgetsFlutterBinding.ensureInitialized();
+//  loadAsset().then((value) {
+//    html = value;
+//  });
   runApp(const MyApp());
 }
 

@@ -19,6 +19,25 @@ var sections = [
   ['фотографика', 'Иллюстрация', 'Арт-обьект', 'Панно', 'IT технологии в искустве', 'Арт-репортаж']
 ];
 
+class Partner {
+  String? id;
+  String? name;
+  String? photo;
+  Partner(this.id, this.name, this.photo);
+}
+
+var partners = [
+  Partner('1','',''),
+  Partner('','',''),
+  Partner('','','')
+];
+
+var organization = [
+  Partner('1','','IMG-20230331-WA0016.jpg'),
+  Partner('','',''),
+  Partner('','','')
+];
+
 class User {
   String? id;
   String? name;
@@ -120,6 +139,8 @@ class Candidate {
     return data;
   }
 }
+
+
 
 /*
 CREATE TABLE candidate (

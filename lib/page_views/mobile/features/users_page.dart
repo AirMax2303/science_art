@@ -6,10 +6,11 @@ import '/repo/repositories.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+//final UserBloc userBloc = UserBloc(UserRepository());
 
 class UsersPage extends StatelessWidget {
-
-  const UsersPage({super.key});
+  const UsersPage({super.key, required this.title});
+  final String title;
 
   @override
   Widget build(BuildContext context) {
@@ -21,17 +22,21 @@ class UsersPage extends StatelessWidget {
       ],
       child: Scaffold(
         appBar: AppBar(),
-        body: blocBody(),
+        body: blocBody(context),
       ),
     );
   }
 
-  Widget blocBody() {
-    return BlocProvider(
-      create: (context) => UserBloc(
-        UserRepository(),
-      )..add(LoadUserEvent()),
-      child: BlocBuilder<UserBloc, UserState>(
+  Widget blocBody(BuildContext context) {
+//    context.read<UserBloc>().add(LoadUserEvent());
+//    BlocProvider.of<UserBloc>(context).add(LoadUserEvent());
+    return
+//      BlocProvider(
+//      create: (context) => UserBloc(
+//        UserRepository(),
+//      )..add(LoadUserEvent()),
+//      child:
+      BlocBuilder<UserBloc, UserState>(
         builder: (context, state) {
           if (state is UserLoadingState) {
             return const Center(
@@ -58,11 +63,16 @@ class UsersPage extends StatelessWidget {
                               style: const TextStyle(color: Colors.white),
                             ),
                             trailing: const Icon(Icons.more_vert),
-                            leading: const CircleAvatar(
-                              backgroundImage: NetworkImage(
-                                'http://science-art.pro/experts/denisenko.jpg'
+                            leading: IconButton(
+                              onPressed: () {
+//                                BlocProvider.of<UserBloc>(context).add(NewUserEvent());
+                              },
+                              icon: const CircleAvatar(
+                                backgroundImage: NetworkImage(
+                                  'http://science-art.pro/experts/denisenko.jpg'
 //                                  userList[index].avatar.toString()
                               ),
+                            ),
                             )
                         )),
                   );
@@ -73,10 +83,9 @@ class UsersPage extends StatelessWidget {
               child: Text("Error"),
             );
           }
-
-//          return Container();
+          return Container();
         },
-      ),
+//      ),
     );
   }
 }
