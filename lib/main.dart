@@ -54,7 +54,7 @@ class _MyHomePageState extends State<MyHomePage> {
             /// landscape - горизонтальная
             return const DesktopView();
           } else {
-            // Todo: MobileView
+            // Todo: MobileView / Поменять структуру
             return const MobileView(); //Text(MediaQuery.of(context).orientation.toString());
           }
         },
